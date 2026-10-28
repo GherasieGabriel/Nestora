@@ -1,0 +1,68 @@
+### Create Category
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "Laptop"
+}
+
+### Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Leptop Lenovo Pavilion 15",
+  "description": "Intel 9300H , GTX1650",
+  "price": 2499.99,
+  "stock": 5,
+  "category": {
+    "id": 1
+  }
+}
+### Create user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Alex Student",
+  "email": "alex@example.com",
+  "address": "University Street 10"
+}
+### Get users
+GET http://localhost:8080/api/users
+Accept: application/json
+
+### Create order
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "user": {
+    "id": 1
+  },
+  "paymentStatus": "UNPAID",
+  "deliveryStatus": "UNCONFIRMED"
+}
+
+### Create order item
+POST http://localhost:8080/api/order-items
+Content-Type: application/json
+
+{
+  "order": {
+    "id": 1
+  },
+  "product": {
+    "id": 1
+  },
+  "quantity": 2,
+  "unitPrice": 2499.99
+}
+### Get orders
+GET http://localhost:8080/api/orders
+Accept: application/json
+
+
+### Get order items
+GET http://localhost:8080/api/order-items
+Accept: application/json
